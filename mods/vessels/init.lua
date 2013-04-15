@@ -3,15 +3,21 @@
 
 minetest.register_node("vessels:glass_bottle", {
 	description = "Glass Bottle (empty)",
-	drawtype = "plantlike",
-	tiles = {"vessels_glass_bottle.png"},
-	inventory_image = "vessels_glass_bottle_inv.png",
-	wield_image = "vessels_glass_bottle.png",
+	drawtype = "nodebox",
+	tiles = {"vessels_bottle_top.png", "vessels_bottle_bottom.png", "vessels_bottle_side.png"},
+	inventory_image = "vessels_bottle_side.png",
+	--wield_image = "vessels_bottle_side.png",
 	paramtype = "light",
 	walkable = false,
-	selection_box = {
+	node_box = {
 		type = "fixed",
-		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+		fixed = {{-0.1875, 0.3125, -0.1875, 0.1875, 0.375, 0.1875},
+			{-0.125, 0.125, -0.125, 0.125, 0.3125, 0.125},
+			{-0.1875, 0.0, -0.1875, 0.1875, 0.125, 0.1875},
+			{-0.25, -0.125, -0.25, 0.25, 0.0, 0.25},
+			{-0.3125, -0.375, -0.3125, 0.3125, -0.125, 0.3125},
+			{-0.25, -0.4375, -0.25, 0.25, -0.375, 0.25},
+			{-0.1875, -0.5, -0.1875, 0.1875, -0.4375, 0.1875}}
 	},
 	groups = {vessel=1,dig_immediate=3,attached_node=1},
 	sounds = default.node_sound_glass_defaults(),
@@ -28,15 +34,17 @@ minetest.register_craft( {
 
 minetest.register_node("vessels:drinking_glass", {
 	description = "Drinking Glass (empty)",
-	drawtype = "plantlike",
-	tiles = {"vessels_drinking_glass.png"},
+	drawtype = "nodebox",
+	tiles = {"vessels_drinking_glass_top.png", "vessels_drinking_glass_bottom.png", "vessels_drinking_glass_side.png"},
 	inventory_image = "vessels_drinking_glass_inv.png",
-	wield_image = "vessels_drinking_glass.png",
+	wield_image = "vessels_drinking_glass_inv.png",
 	paramtype = "light",
 	walkable = false,
-	selection_box = {
+	node_box = {
 		type = "fixed",
-		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+		fixed = {{-0.3125, -0.375, -0.3125, 0.3125, 0.25, 0.3125},
+			{-0.25, -0.4375, -0.25, 0.25, -0.375, 0.25},
+			{-0.1875, -0.5, -0.1875, 0.1875, -0.4375, 0.1875}}
 	},
 	groups = {vessel=1,dig_immediate=3,attached_node=1},
 	sounds = default.node_sound_glass_defaults(),
@@ -53,15 +61,16 @@ minetest.register_craft( {
 
 minetest.register_node("vessels:steel_bottle", {
 	description = "Heavy Steel Bottle (empty)",
-	drawtype = "plantlike",
-	tiles = {"vessels_steel_bottle.png"},
-	inventory_image = "vessels_steel_bottle_inv.png",
-	wield_image = "vessels_steel_bottle.png",
+	drawtype = "nodebox",
+	tiles = {"vessels_steel_bottle_top.png","vessels_steel_bottle_bottom.png" , "vessels_steel_bottle.png"},
 	paramtype = "light",
 	walkable = false,
-	selection_box = {
+	node_box = {
 		type = "fixed",
-		fixed = {-0.25, -0.5, -0.25, 0.25, 0.4, 0.25}
+		fixed = {{-0.125, 0.1875, -0.125, 0.125, 0.25, 0.125},
+			{-0.25, 0.125, -0.25, 0.25, 0.1875, 0.25},
+			{-0.3125, -0.4375, -0.3125, 0.3125, 0.125, 0.3125},
+			{-0.25, -0.5, -0.25, 0.25, -0.4375, 0.25}}
 	},
 	groups = {vessel=1,dig_immediate=3,attached_node=1},
 	sounds = default.node_sound_defaults(),
